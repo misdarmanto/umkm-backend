@@ -5,7 +5,6 @@ export interface ResponseDataAttributes {
 	status: string;
 	error_message: any | null;
 	data: any;
-	next: any | null;
 	version: any | Object | null;
 }
 export const ResponseData = {
@@ -24,7 +23,6 @@ export const ResponseData = {
 		status: "success",
 		error_message: null,
 		data: "",
-		next: "",
 		version: { code: CONFIG.app_version, name: CONFIG.app_semantic },
 	},
 };
