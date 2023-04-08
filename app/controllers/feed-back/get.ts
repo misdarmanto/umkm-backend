@@ -4,19 +4,20 @@ import { ResponseData, ResponseDataAttributes } from "../../utilities/response";
 import { Op } from "sequelize";
 import { Pagination } from "../../utilities/pagination";
 import { requestChecker } from "../../utilities/requestChecker";
-import { MenuModel } from "../../models/menu";
+import { EmployeeModel } from "../../models/employee";
+import { FeedBackModel } from "../../models/feed-back";
 
-export const getListMenu = async (req: any, res: Response) => {
+export const getListFeedBack = async (req: any, res: Response) => {
 	try {
 		const page = new Pagination(+req.query.page || 0, +req.query.size || 10);
 		const where = {
 			deleted: { [Op.eq]: 0 },
 			...(req.query.search && {
-				title: { [Op.like]: `%${req.query.search}%` },
+				name: { [Op.like]: `%${req.query.search}%` },
 			}),
 		};
 
-		const result = await MenuModel.findAndCountAll({
+		const result = await FeedBackModel.findAndCountAll({
 			where: where,
 			order: [["id", "desc"]],
 		});
@@ -32,13 +33,13 @@ export const getListMenu = async (req: any, res: Response) => {
 		return res.status(StatusCodes.OK).json(response);
 	} catch (error: any) {
 		console.log(error.message);
-		const message = `error ${error.message}`;
+		const message = `Tidak dapat memprosess. Laporkan kendala ini! error ${error.message}`;
 		const response = <ResponseDataAttributes>ResponseData.error(message);
 		return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json(response);
 	}
 };
 
-export const getDetailMenu = async (req: any, res: Response) => {
+export const getDetailFeedBack = async (req: any, res: Response) => {
 	const emptyField = requestChecker({
 		requireList: ["id"],
 		requestData: req.params,
@@ -51,7 +52,7 @@ export const getDetailMenu = async (req: any, res: Response) => {
 	}
 
 	try {
-		const result = await MenuModel.findOne({
+		const result = await FeedBackModel.findOne({
 			where: {
 				id: { [Op.eq]: req.params.id },
 				deleted: { [Op.eq]: 0 },

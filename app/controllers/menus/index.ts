@@ -1,6 +1,12 @@
-import { getAllMenu, getDetailMenu } from "./get";
+import { createMenu } from "./create";
+import { deleteMenu } from "./delete";
+import { getDetailMenu, getListMenu } from "./get";
+import { updateMenu } from "./update";
 
 export const MENU = {
-	get: getAllMenu,
+	list: getListMenu,
 	detail: getDetailMenu,
+	create: createMenu,
+	update: updateMenu,
+	delete: deleteMenu,
 };
