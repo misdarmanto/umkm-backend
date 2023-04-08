@@ -3,6 +3,8 @@ import { StatusCodes } from "http-status-codes";
 import { ResponseData, ResponseDataAttributes } from "../../utilities/response";
 import { Op } from "sequelize";
 import { Pagination } from "../../utilities/pagination";
+import { MenuModel } from "../../models/menu";
+import { requestChecker } from "../../utilities/requestChecker";
 
 export const getAllMenu = async (req: any, res: Response) => {
 	try {
@@ -14,24 +16,60 @@ export const getAllMenu = async (req: any, res: Response) => {
 			}),
 		};
 
-		// const pushNotification = await PushNotificationModel.findAndCountAll({
-		// 	where: where,
-		// 	order: [["id", "desc"]],
-		// });
+		const result = await MenuModel.findAndCountAll({
+			where: where,
+			order: [["id", "desc"]],
+		});
 
-		// if (!pushNotification) {
-		// 	const message = "not fond!";
-		// 	const response = <ResponseDataAttributes>ResponseData.error(message);
-		// 	return res.status(StatusCodes.NOT_FOUND).json(response);
-		// }
+		if (!result) {
+			const message = "not fond!";
+			const response = <ResponseDataAttributes>ResponseData.error(message);
+			return res.status(StatusCodes.NOT_FOUND).json(response);
+		}
 
 		const response = <ResponseDataAttributes>ResponseData.default;
-		// response.data = page.data(pushNotification);
-		response.data = { message: "hello" };
+		response.data = page.data(result);
 		return res.status(StatusCodes.OK).json(response);
 	} catch (error: any) {
 		console.log(error.message);
-		const message = `Tidak dapat memprosess. Laporkan kendala ini! error ${error.message}`;
+		const message = `error ${error.message}`;
+		const response = <ResponseDataAttributes>ResponseData.error(message);
+		return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json(response);
+	}
+};
+
+export const getDetailMenu = async (req: any, res: Response) => {
+	const emptyField = requestChecker({
+		requireList: ["id"],
+		requestData: req.params,
+	});
+
+	if (emptyField) {
+		const message = `Invalid request parameter! require (${emptyField})`;
+		const response = <ResponseDataAttributes>ResponseData.error(message);
+		return res.status(StatusCodes.BAD_REQUEST).json(response);
+	}
+
+	try {
+		const result = await MenuModel.findOne({
+			where: {
+				id: { [Op.eq]: req.params.id },
+				deleted: { [Op.eq]: 0 },
+			},
+		});
+
+		if (!result) {
+			const message = "Not found!";
+			const response = <ResponseDataAttributes>ResponseData.error(message);
+			return res.status(StatusCodes.NOT_FOUND).json(response);
+		}
+
+		const response = <ResponseDataAttributes>ResponseData.default;
+		response.data = result;
+		return res.status(StatusCodes.OK).json(response);
+	} catch (error: any) {
+		console.log(error.message);
+		const message = `error ${error.message}`;
 		const response = <ResponseDataAttributes>ResponseData.error(message);
 		return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json(response);
 	}

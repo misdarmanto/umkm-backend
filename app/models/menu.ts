@@ -14,7 +14,7 @@ type MenuCreationAttributes = Optional<MenuAttributes, "id" | "created_on" | "mo
 
 interface MenuInstance extends Model<MenuAttributes, MenuCreationAttributes>, MenuAttributes {}
 
-export const RewardModel = sequelize.define<MenuInstance>(
+export const MenuModel = sequelize.define<MenuInstance>(
 	"menu",
 	{
 		...ZygoteModel,

@@ -10,4 +10,5 @@ export const route = (app: Express) => {
 	const MenusRouter = express.Router();
 	app.use("/menu", middleware.useAuthorization, MenusRouter);
 	MenusRouter.get("/", (req: Request, res: Response) => MENU.get(req, res));
+	MenusRouter.get("/:id", (req: Request, res: Response) => MENU.detail(req, res));
 };
