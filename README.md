@@ -16,5 +16,7 @@ npm install
     ```
     $ app/configs/database
     ```
-
-
+3. import postman collection (opsional)
+    ```
+    $ /post-man
+    ```
