@@ -8,7 +8,7 @@ export interface MenuAttributes extends ZygoteAttributes {
 	image: number;
 	stars: number;
 	price: string;
-	type: "standard" | "popular";
+	category: "standard" | "popular";
 }
 
 type MenuCreationAttributes = Optional<MenuAttributes, "id" | "created_on" | "modified_on">;
@@ -40,7 +40,7 @@ export const MenuModel = sequelize.define<MenuInstance>(
 			type: DataTypes.INTEGER,
 			allowNull: false,
 		},
-		type: {
+		category: {
 			type: DataTypes.ENUM("standard", "popular"),
 			allowNull: false,
 			defaultValue: "popular",

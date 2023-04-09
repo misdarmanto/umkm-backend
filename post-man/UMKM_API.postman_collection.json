@@ -1,0 +1,974 @@
+{
+	"info": {
+		"_postman_id": "6043b1f6-1905-4d4b-9269-eaa9cdbefc8e",
+		"name": "UMKM_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24723518"
+	},
+	"item": [
+		{
+			"name": "menu",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "mbadok_secret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mbadok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \t\"title\": \"Nasi Ayam\",\n\t\t\"image\": \"https://firebasestorage.googleapis.com/v0/b/sistemembeded.appspot.com/o/food%2Fnasi-ayam.png?alt=media&token=1fc29f1d-d79e-4b8f-8c4b-529cacf5b394\",\n\t\t\"stars\": 4,\n\t\t\"description\":\n\t\t\t\"Nasi Ayam kami terbuat dari bahan-bahan pilihan yang segar dan berkualitas tinggi. Ayam yang kami gunakan diolah dengan rempah-rempah khas, seperti jahe, bawang putih, ketumbar, dan serai, yang memberikan cita rasa unik dan nikmat pada ayam yang kami sajikan. Ayam kami dimasak dengan teknik yang tepat untuk menghasilkan daging yang lezat, empuk, dan penuh dengan aroma rempah-rempah yang menggoda selera. Nasi yang kami gunakan juga diolah dengan hati-hati, menghasilkan nasi yang pulen, harum, dan gurih. Nasi ayam kami biasanya disajikan bersama lauk pelengkap seperti telur rebus, sayuran hijau, dan acar, yang memberikan tambahan nutrisi dan rasa yang beragam dalam satu hidangan.\",\n\t\t\"price\": 15000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/menu/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"menu",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \t\"title\": \"Nasi Ayam\",\n\t\t\"image\": \"https://firebasestorage.googleapis.com/v0/b/sistemembeded.appspot.com/o/food%2Fnasi-ayam.png?alt=media&token=1fc29f1d-d79e-4b8f-8c4b-529cacf5b394\",\n\t\t\"stars\": 4,\n\t\t\"description\":\n\t\t\t\"Nasi Ayam kami terbuat dari bahan-bahan pilihan yang segar dan berkualitas tinggi. Ayam yang kami gunakan diolah dengan rempah-rempah khas, seperti jahe, bawang putih, ketumbar, dan serai, yang memberikan cita rasa unik dan nikmat pada ayam yang kami sajikan. Ayam kami dimasak dengan teknik yang tepat untuk menghasilkan daging yang lezat, empuk, dan penuh dengan aroma rempah-rempah yang menggoda selera. Nasi yang kami gunakan juga diolah dengan hati-hati, menghasilkan nasi yang pulen, harum, dan gurih. Nasi ayam kami biasanya disajikan bersama lauk pelengkap seperti telur rebus, sayuran hijau, dan acar, yang memberikan tambahan nutrisi dan rasa yang beragam dalam satu hidangan.\",\n\t\t\"price\": 15000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/menu/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"menu",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "mbadok_secret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mbadok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/menu/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"menu",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "mbadok_secret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mbadok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/menu/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"menu",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "mbadok_secret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mbadok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"title\": \"Kraby Paty\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/menu/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"menu",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 2,\n    \"title\": \"Kraby Paty\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/menu/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"menu",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "mbadok_secret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mbadok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"title\": \"Kraby Paty\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/menu?id=11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"menu"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 2,\n    \"title\": \"Kraby Paty\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/menu?id=11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"menu"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "11"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "employee",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "mbadok_secret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mbadok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Sarmini\",\n\t\"image\": \"https://firebasestorage.googleapis.com/v0/b/sistemembeded.appspot.com/o/chefes%2Fchefe-cozinha-profissional.jpg?alt=media&token=1dcc36a7-940e-4e2d-886a-57c253c4ba80\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"employee"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Sarmini\",\n\t\"image\": \"https://firebasestorage.googleapis.com/v0/b/sistemembeded.appspot.com/o/chefes%2Fchefe-cozinha-profissional.jpg?alt=media&token=1dcc36a7-940e-4e2d-886a-57c253c4ba80\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/employee",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"employee"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "mbadok_secret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mbadok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/employee/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"employee",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "mbadok_secret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mbadok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/employee/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"employee",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "mbadok_secret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mbadok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"title\": \"Kraby Paty\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"employee"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 2,\n    \"title\": \"Kraby Paty\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/employee",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"employee"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "mbadok_secret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mbadok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"title\": \"Kraby Paty\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/employee?id=77",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"employee"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "77"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 2,\n    \"title\": \"Kraby Paty\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/employee?id=77",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"employee"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "77"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "feed-back",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "mbadok_secret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mbadok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"name\": \"Melia\",\n\t\"message\":\n\t\t\t\"Pelayanannya sangat ramah dan cepat. Makanannya enak dan disajikan dengan indah. Saya pasti akan kembali lagi!\",\n\t\"image\": \"https://firebasestorage.googleapis.com/v0/b/sistemembeded.appspot.com/o/feedback%2Fphoto-1554151228-14d9def656e4.avif?alt=media&token=8a9f2d9e-b1fc-45f3-b09f-4735965be9c7\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/feed-back",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"feed-back"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"name\": \"Melia\",\n\t\"message\":\n\t\t\t\"Pelayanannya sangat ramah dan cepat. Makanannya enak dan disajikan dengan indah. Saya pasti akan kembali lagi!\",\n\t\"image\": \"https://firebasestorage.googleapis.com/v0/b/sistemembeded.appspot.com/o/feedback%2Fphoto-1554151228-14d9def656e4.avif?alt=media&token=8a9f2d9e-b1fc-45f3-b09f-4735965be9c7\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/feed-back",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"feed-back"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "mbadok_secret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mbadok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/feed-back/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"feed-back",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/feed-back/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"feed-back",
+										"list"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "detail",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "mbadok_secret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mbadok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/feed-back/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"feed-back",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "mbadok_secret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mbadok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"title\": \"Kraby Paty\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/feed-back",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"feed-back"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 2,\n    \"title\": \"Kraby Paty\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/feed-back",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"feed-back"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "mbadok_secret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mbadok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"title\": \"Kraby Paty\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/feed-back?id=66",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"feed-back"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "66"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 2,\n    \"title\": \"Kraby Paty\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/feed-back?id=66",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"feed-back"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "66"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	]
+}

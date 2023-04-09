@@ -3,7 +3,6 @@ import { StatusCodes } from "http-status-codes";
 import { ResponseData, ResponseDataAttributes } from "../../utilities/response";
 import { Op } from "sequelize";
 import { requestChecker } from "../../utilities/requestChecker";
-import { EmployeeModel } from "../../models/employee";
 import { MenuModel } from "../../models/menu";
 
 export const updateMenu = async (req: any, res: Response) => {
@@ -38,7 +37,7 @@ export const updateMenu = async (req: any, res: Response) => {
 			...(req.body.type && { type: req.body.type }),
 		};
 
-		await EmployeeModel.update(newData, { where: { id: { [Op.eq]: req.body.id } } });
+		await MenuModel.update(newData, { where: { id: { [Op.eq]: req.body.id } } });
 		const response = <ResponseDataAttributes>ResponseData.default;
 		response.data = req.body;
 		return res.status(StatusCodes.OK).json(response);

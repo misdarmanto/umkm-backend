@@ -11,6 +11,9 @@ export const getListMenu = async (req: any, res: Response) => {
 		const page = new Pagination(+req.query.page || 0, +req.query.size || 10);
 		const where = {
 			deleted: { [Op.eq]: 0 },
+			...(req.query.category && {
+				category: { [Op.eq]: req.query.category },
+			}),
 			...(req.query.search && {
 				title: { [Op.like]: `%${req.query.search}%` },
 			}),
