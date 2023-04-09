@@ -2,8 +2,9 @@
 api untuk umkm restoran
 
 ## Instalasi
-npm install
-
+```
+$ npm install
+```
 ## Penggunaan
 
 
